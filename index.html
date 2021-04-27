@@ -117,11 +117,17 @@
       display:flex;
       justify-content: space-between;
       align-items: center;
+      border-top: 1px solid grey;
     }
     footer li{
       padding:10px;
       display:inline-block;
       cursor: pointer;
+    }
+    p.credits{
+      padding-top:20px;
+      text-align: left;
+      padding-left: 36px;
     }
     p.credits a{
       text-decoration: none;
@@ -152,6 +158,34 @@
     section.textSection p{
       text-align:left;
       padding-left:36px;
+    }
+    footer{
+      padding-top:40px;
+    }
+    form.subscribeEmail{
+      display:flex;
+      flex-direction: row;
+      border:1px solid grey;
+      border-radius:100px;
+      background-color:#FFF;
+      width: 30%;
+      margin:0 auto;
+    }
+    input.subscribeEmail{
+      flex-grow:2;
+      border-radius: 100px;
+      border-top: none;
+      border-right: none;
+      border-bottom: none;
+    }
+    input.subscribeEmail:focus{
+      outline: none;
+    }
+    button.subscribeEmail{
+      margin-right: 24px;
+      border-radius: 100px;
+      padding:12px;
+      margin-bottom: 24px;
     }
   </style>
   <title>travel-app</title>
@@ -214,7 +248,13 @@
   </article>
 
   <footer>
-    <p class="credits"><a href="https://unsplash.com/photos/M6XC789HLe8">Image by Aniket Deole</a> 
+    <h3>Get In Touch</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Amet atque facere odio ducimus?</p>
+    <form class="subscribeEmail">
+      <input class="subscribeEmail" type="email" placeholder="Enter your email address">
+      <button type="button" class="subscribeEmail">Subscribe</button>
+    </form>
+    <p class="credits"><a href="https://unsplash.com/photos/M6XC789HLe8">Image by Aniket Deole</a>     
     <br>
     <a href="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80">Image by Tim Swaan</a>
     </p>
@@ -229,7 +269,6 @@
       </ul>
     </nav>
   </footer>
-
 
   <script type="module" src="./src/travel-app.js"></script>
 </body>
