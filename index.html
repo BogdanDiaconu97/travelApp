@@ -9,183 +9,308 @@
 
   <style>
     *{
-      text-align:center;
-      box-sizing: border-box;
+    text-align:center;
+    box-sizing: border-box;
+  }
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: #ededed;
+  }
+  body{
+    background-color:hsl(0,0%,88%);
+    display:grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: minmax(100px,auto);
+  }
+  .header{
+    grid-column: 1/13;
+    grid-row:1/2;
+  }
+  nav{
+      margin-bottom: 48px;
+  }
+  section.header h1{
+    padding-left: 36px;
+    font-weight: lighter;
+    color:#FFF;
+  }
+  section.header h1:hover{
+      color:rgb(10, 126, 87);
+      cursor:pointer;
+  }
+  section.header li{
+    padding:10px 40px 10px 0;
+    display:block;
+  }
+  section.header a:hover{
+    color:rgb(10, 126, 87);
+    cursor:pointer;  
+  }
+  section.header a{
+    text-decoration: none;
+    color:#FFF;
+  }
+  span.bookNow, button{
+    border:1px solid black;
+    border-radius: 12px;
+    background-color:#FFF;
+    font-weight: bold;
+    color:rgb(10, 126, 87);
+    padding:8px 16px;
+  }
+  span.bookNow:hover, button:hover{
+    background-color:rgb(10, 126, 87);
+    color: #FFF;
+    cursor: pointer;
+  }
+  section.header p{
+    font-size:36px;
+    font-weight: bold;
+    color:#FFF;
+    margin:0;
+  }
+  .header p{
+    padding-bottom: 24px;
+  }
+    button{
+    border:1px solid black;
+    border-radius: 12px;
+    background-color:#FFF;
+    font-weight: bold;
+    color:rgb(10, 126, 87);
+    padding:8px 16px;
+  }
+  .header{
+    padding-bottom: 200px;
+    background-image: url('https://images.unsplash.com/photo-1498429089284-41f8cf3ffd39?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80');
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position:center;
+  }
+  form{
+      grid-row:2/3;
+      grid-column: 1/13;
+  }
+  .travelForm{
+      background-color: hsl(0,0%,88%);
+      padding-top:10px;
+  }
+  section.travelForm div{
+      padding:10px;
+      display:flex;
+  }
+  .travelForm label{
+      flex:1;
+      font-weight: bold;
+      text-align: left;
+      padding-left: 20px;
+  }
+  .travelForm input, .travelForm select{
+      flex:0.75;
+      border-radius: 24px;
+      padding:4px;
+      border:2px solid rgb(10, 126, 87);
+  }
+  .travelForm button{
+      margin:24px 0 36px;
+  }
+  article.contentDescription{
+      grid-column: 1/13;
+      grid-row:3/4;
+  }
+  
+  section.photoSection{
+    background-image: url('https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80');
+    padding:240px 0;
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position: center;
+  }
+
+  section.textSection h2{
+    font-size:36px;
+    text-align: center;
+  }
+  section.textSection p{
+    text-align:left;
+    padding-left:36px;
+  }
+  footer{
+    padding-top:40px;
+  }
+  form.subscribeEmail{
+    display:flex;
+    border:1px solid grey;
+    border-radius:100px;
+    background-color:#FFF;
+    width: 50%;
+    margin:0 auto;
+  }
+  input.subscribeEmail{
+    flex-grow:2;
+    border-radius: 100px;
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+  }
+  input.subscribeEmail:focus{
+    outline: none;
+  }
+  button.subscribeEmail{
+    margin-right: 4px;
+    border-radius: 100px;
+    padding:12px;
+  }
+  footer{
+    margin-top:24px;
+    grid-column: 1/13;
+    background-color:rgb(10, 126, 87);
+    color:#FFF;
+  }
+  footer nav{
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid grey;
+  }
+  footer ul{
+      padding-left: 0;
+  }
+  footer li{
+    padding:10px;
+    display:inline-block;
+    cursor: pointer;
+  }
+  p.credits{
+    padding-top:20px;
+    padding-left: 36px;
+  }
+  p.credits a{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.671);
+  }
+  p.credits a:hover{
+    color:#FFF;
+  }
+
+  /* Media Queries */
+
+@media only screen and (min-width:480px) {
+      p.credits{
+          text-align: left;
+      }
     }
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: sans-serif;
-      background-color: #ededed;
-      
+@media only screen and (min-width:768px) {
+    form{
+        grid-column: 2/12;
     }
-    section.header h1{
-      font-weight: lighter;
-      color:#FFF;
+  article.contentDescription{
+    display:flex;
+  }
+  section.photoSection{
+    flex:1;
+    background-image: url('https://images.unsplash.com/photo-1446329813274-7c9036bd9a1f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-position: center;
+  }
+  section.textSection{
+    text-align: center;
+    flex:1;
+  }
+  section.textSection h2{
+    font-size:36px;
+    text-align: left;
+    padding-left: 36px;
+  }
+  section.textSection p{
+    text-align:left;
+    padding-left:48px;
+  }
+  footer{
+      margin:0;
+  }
+  footer nav{
+      display:flex;
+      margin: 0 36px;
+  }
+  form.subscribeEmail{
+      width: 40%;
+  }
+    }
+@media only screen and (min-width:1024px) {
+    section.textSection h2{
+        padding-left:72px;
     }
     section.header nav{
-      padding:8px 72px 48px 72px;
-      display:flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+    padding:8px 72px 48px 72px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+  }
     section.header li{
-      padding:10px;
-      display:inline-block;
-    }
-    section.header a{
-      text-decoration: none;
-      color:black;
-    }
-    span.bookNow, section.textSection button{
-      border:1px solid black;
-      border-radius: 12px;
-      background-color:#FFF;
-      font-weight: bold;
-      color:rgb(10, 126, 87);
-      padding:8px 16px;
-    }
-    span.bookNow:hover, section.textSection button:hover{
-      background-color:rgb(10, 126, 87);
-      color: #FFF;
+        display:inline-block;
     }
     section.header p{
-      font-size:48px;
-      font-weight: bold;
-      color:#FFF;
-      margin:0;
-    }
-      button{
-      margin-top:20px;
-      padding:24px 36px;
-      border:1px solid black;
-      background-color: rgb(10, 126, 87);
-      color:#FFF;
-      border-radius:12px;
-      cursor: pointer;
+        font-size: 48px;
     }
     .header{
-      margin:0 36px 0 36px;
-      padding-bottom: 300px;
-      background-image: url('https://images.unsplash.com/photo-1498429089284-41f8cf3ffd39?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80');
-      background-repeat:no-repeat;
-      background-attachment: fixed;
-      background-size: cover;
-      background-position:center;
+        background-attachment: fixed;
+        padding-bottom: 300px;
     }
-
     .travelForm{
-      background-color: hsl(0, 0%, 88%);
-      position:absolute;
-      top:60%;
-      left:0;
-      right:0;
-      width: 80%;
-      margin: 0 auto;
-      padding:50px;
-      border: 4px solid grey;
-      border-radius:48px;
+    position:absolute;
+    top:60%;
+    left:0;
+    right:0;
+    width: 80%;
+    margin: 0 auto;
+    border: 4px solid grey;
+    border-radius:48px;
+    padding-bottom: 24px;
+    }
+    section.travelForm button{
+        margin-top:40px;
+        padding:12px;
     }
     section.travelForm div{
-      float:left;
-      margin:10px;
-    }
-    .travelForm input{
-      padding:16px;
-      border:2px solid grey;
-      border-radius: 12px;
-    }
-    .travelForm select{
-      padding:16px;
-      border:2px solid grey;
-      border-radius: 12px;
-    }
-    .travelForm label{
-      font-weight: bold;
-      text-align: left;
-      display:block;
-      margin-bottom: 16px;
-    }
-    footer{
-      padding:0px 72px 0 72px;
-      background-color:rgb(10, 126, 87);
-      margin: 0 36px 0 36px;
-      color:#FFF;
-    }
-    footer nav{
-      display:flex;
-      justify-content: space-between;
-      align-items: center;
-      border-top: 1px solid grey;
-    }
-    footer li{
-      padding:10px;
-      display:inline-block;
-      cursor: pointer;
-    }
-    p.credits{
-      padding-top:20px;
-      text-align: left;
-      padding-left: 36px;
-    }
-    p.credits a{
-      text-decoration: none;
-      color: rgba(255, 255, 255, 0.671);
-    }
-    p.credits a:hover{
-      color:#FFF;
-    }
-    article.contentDescription{
-      margin: 0 36px 0 36px;
-      background-color: hsl(0, 0%, 88%);
-      display:flex;
-    }
-    section.photoSection{
-      flex:1;
-      background-image: url('https://images.unsplash.com/photo-1446329813274-7c9036bd9a1f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-      background-position: center;
-    }
-    section.textSection{
-      flex:1;
-      padding:240px 0 88px 0;
-    }
-    section.textSection h2{
-      font-size:48px;
-      text-align: left;
-      padding-left: 100px;
-    }
-    section.textSection p{
-      text-align:left;
-      padding-left:36px;
-    }
-    footer{
-      padding-top:40px;
-    }
-    form.subscribeEmail{
-      display:flex;
-      flex-direction: row;
-      border:1px solid grey;
-      border-radius:100px;
-      background-color:#FFF;
+    display:block;
+    float:left;
+  }
+  .travelForm input{
+    outline: none;
+    padding:8px;
+    border:2px solid grey;
+    border-radius: 12px;
+  }
+  .travelForm select{
+    padding:8px;
+    border:2px solid grey;
+    border-radius: 12px;
+  }
+  .travelForm label{
+    font-weight: bold;
+    text-align: left;
+    display:block;
+    margin-bottom: 16px;
+  }
+  .textSection{
+      padding:120px 0 88px 0;
+  }
+  form.subscribeEmail{
       width: 30%;
-      margin:0 auto;
+  }
     }
-    input.subscribeEmail{
-      flex-grow:2;
-      border-radius: 100px;
-      border-top: none;
-      border-right: none;
-      border-bottom: none;
-    }
-    input.subscribeEmail:focus{
-      outline: none;
-    }
-    button.subscribeEmail{
-      margin-right: 24px;
-      border-radius: 100px;
-      padding:12px;
-      margin-bottom: 24px;
+    @media only screen and (min-width:1200px){
+        .travelForm{
+            padding:48px 24px;
+        }
+        section.travelForm div{
+            margin:10px;
+        }
+        .textSection{
+      padding:180px 0 88px 0;
+  }
     }
   </style>
   <title>travel-app</title>
@@ -203,12 +328,11 @@
           <li><a href="">Hotel</a></li>
           <li><a href="">Places</a></li>
           <li><a href="">Contact Us</a></li>
-          <li><a href=""><span class="bookNow">Book now</span></a></li>
+          <li><a href=""><button type="button" class="bookNow">Book now</button></a></li>
         </ul>
       </nav>
     </header>
-    <p>Discover The World</p>
-    <p>With Us</p>
+    <p>Discover The World <br>With Us </p>
     <button type="button">Start Tour</button>
   </section>
   <form>
@@ -257,6 +381,8 @@
     <p class="credits"><a href="https://unsplash.com/photos/M6XC789HLe8">Image by Aniket Deole</a>     
     <br>
     <a href="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80">Image by Tim Swaan</a>
+    <br>
+    <a href="https://unsplash.com/photos/cssvEZacHvQ">Image by Blake Verdoorn</a>
     </p>
     <nav>
       <p>&copy; 2021 ING DevSchool</p>
