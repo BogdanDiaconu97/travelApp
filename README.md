@@ -4,6 +4,10 @@
 
 # [My live link](https://angry-hodgkin-a54780.netlify.app)✌
 
+## Interactions with the API
+Work in progress
+
+
 ## Travel App
 
 [![Built with open-wc recommendations](https://img.shields.io/badge/built%20with-open--wc-blue.svg)](https://github.com/open-wc)
