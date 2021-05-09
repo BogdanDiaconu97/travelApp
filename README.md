@@ -6,7 +6,7 @@
 
 ## Interactions with the API
 
-1. Post Method:
+##### 1. Post Method:
 
 - I created a POST request at the following link: https://devschool-2020.firebaseio.com/bogdan/places.json
   Using the following JSON body:
@@ -18,7 +18,7 @@
 "imageUrl":""
 }
 
-2. Get Method:
+##### 2. Get Method:
 
 - I created a GET request on the following link: https://devschool-2020.firebaseio.com/bogdan/places.json
   In return I received the following response:
@@ -42,7 +42,7 @@
 "type": "nature"
 }
 
-3. PUT Method:
+##### 3. PUT Method:
 
 - I created a PUT request on the specific ID, to replace informations of that location: rootURL/bogdan/places/-M_G9qMRDbt7Ujd_ts0k.json
 
@@ -55,7 +55,7 @@
 
 Now, the previous content was overwritten.
 
-4. PATCH Method:
+##### 4. PATCH Method:
 
 - I created a PATCH request to update the image URL of a specific location: rootURL/bogdan/places/-M_GD6P2D7QuzMhak1By.json
   with the following body:
@@ -66,13 +66,13 @@ Now, the previous content was overwritten.
 
 Now, the previous value of imageUrl was updated, with no side effects on the other properties.
 
-5. DELETE Method:
+##### 5. DELETE Method:
 
 - Using this method will delete the content of specific ID : rootURL/bogdan/places/-M_GD6P2D7QuzMhak1By.json
 
 In return, we will receive null.
 
-6. FETCH API
+##### 6. FETCH API
 
 - In our page, I used the fetch() method to return the information as bellow:
 
