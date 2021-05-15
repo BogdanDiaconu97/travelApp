@@ -71,22 +71,19 @@ class CardList extends LitElement {
   }
 
   render() {
-    if (this.load) {
-      return html`<p>Content is loading...</p>`;
-    }
-    return html`
-      <h1 class="bookNow">Book Now!</h1>
-      <ul>
-        ${this._cardList.map(
-          location =>
-            html`
-              <li>
-                <card-list-item .cardItem=${location}></card-list-item>
-              </li>
-            `
-        )}
-      </ul>
-    `;
+    return html` ${this.load
+      ? html`<p>Content is loading...</p>`
+      : html`<h1 class="bookNow">Book Now!</h1>
+          <ul>
+            ${this._cardList.map(
+              location =>
+                html`
+                  <li>
+                    <card-list-item .cardItem=${location}></card-list-item>
+                  </li>
+                `
+            )}
+          </ul> `}`;
   }
 }
 
