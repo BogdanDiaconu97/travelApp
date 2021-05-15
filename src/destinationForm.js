@@ -1,8 +1,15 @@
 import { LitElement, css, html } from '@lion/core';
 
-import '@lion/form/define';
-import '@lion/input/define';
-import '@lion/button/define';
+// import { LionInput } from '@lion/input';
+// import { LionForm } from '@lion/form';
+// import { LionButton } from '@lion/button';
+
+// import '@lion/input/define';
+// import '@lion/form/define';
+// import '@lion/button/define';
+import './myLionButton.js';
+import './myLionForm.js';
+import './myLionInput.js';
 
 import { ajax } from '@lion/ajax';
 
@@ -14,6 +21,7 @@ class DestinationForm extends LitElement {
       }
     `;
   }
+
   static get properties() {
     return {
       _locationData: {
@@ -21,23 +29,28 @@ class DestinationForm extends LitElement {
       },
     };
   }
+
   connectedCallback() {
     super.connectedCallback();
   }
+
   render() {
     return html`
-      <lion-form>
+      <my-lion-form>
         <form @submit=${this._handleFormSubmit}>
-          <lion-input name="name" label="Location's name"></lion-input>
-          <lion-input name="type" label="Location's type"></lion-input>
-          <lion-input
+          <my-lion-input name="name" label="Location's name"></my-lion-input>
+          <my-lion-input name="type" label="Location's type"></my-lion-input>
+          <my-lion-input
             name="description"
             label="Location's description"
-          ></lion-input>
-          <lion-input name="imageUrl" label="Location's picture"></lion-input>
-          <lion-button type="submit">Add location</lion-button>
+          ></my-lion-input>
+          <my-lion-input
+            name="imageUrl"
+            label="Location's picture"
+          ></my-lion-input>
+          <my-lion-button type="submit">Add location</my-lion-button>
         </form>
-      </lion-form>
+      </my-lion-form>
     `;
   }
 
@@ -48,6 +61,7 @@ class DestinationForm extends LitElement {
     this._locationData = Object.fromEntries(formData);
     this._postLocation(this._locationData);
   }
+
   async _postLocation() {
     const { response, body } = await ajax.fetchJson(
       'https://devschool-2020.firebaseio.com/bogdan/places.json',
