@@ -7,14 +7,16 @@
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
     <meta name="Description" content="Put your description here." />
+    <link rel="stylesheet" href="style.css" />
     <base href="/" />
 
     <script type="module" src="./src/travel-app.js"></script>
     <script type="module" src="./src/MyComponents/destinationCard.js"></script>
     <script type="module" src="./src/MyComponents/destinationForm.js"></script>
+    <script type="module" src="./src/MyComponents/navBar.js"></script>
 
     <style>
-      * {
+      /* * {
         text-align: center;
         box-sizing: border-box;
       }
@@ -206,7 +208,7 @@
 
       /* Media Queries */
 
-      @media only screen and (min-width: 480px) {
+      /*    @media only screen and (min-width: 480px) {
         p.credits {
           text-align: left;
         }
@@ -320,7 +322,7 @@
         .textSection {
           padding: 180px 0 88px 0;
         }
-      }
+      } */
     </style>
     <title>travel-app</title>
   </head>
@@ -328,7 +330,9 @@
     <!-- <travel-app></travel-app> -->
 
     <section class="header">
-      <header>
+      <nav-bar></nav-bar>
+
+      <!-- <header>
         <nav>
           <h1>My Travel App ✌</h1>
           <ul>
@@ -344,7 +348,7 @@
             </li>
           </ul>
         </nav>
-      </header>
+      </header> -->
       <p>Discover The World <br />With Us</p>
       <button type="button">Start Tour</button>
     </section>
