@@ -5,11 +5,16 @@ class NavBar extends LitElement {
   static get styles() {
     return css`
       nav {
-        padding: 16px 0 32px 0;
+        margin: 16px 0 32px 0;
+        border-bottom: 2px solid black;
+      }
+      h1 {
+        padding-top: 16px;
       }
       a {
         text-decoration: none;
-        color: #fff;
+        color: black;
+        font-weight: bold;
       }
       h1:hover {
         color: lightgrey;
@@ -26,19 +31,7 @@ class NavBar extends LitElement {
       }
       a:hover {
         color: #3a954a;
-        font-weight: bold;
-      }
-      my-lion-button {
-        border: 1px solid black;
-        border-radius: 8px;
-        font-weight: bold;
-        color: #6b48a8;
-        background-color: #3a954a;
-      }
-      my-lion-button:hover {
-        color: #3a954a;
-        background-color: #6b48a8;
-        cursor: pointer;
+        font-weight: bolder;
       }
       @media only screen and (min-width: 768px) {
         nav {
@@ -50,11 +43,19 @@ class NavBar extends LitElement {
           padding-right: 32px;
         }
         h1 {
-          padding-left: 32px;
+          padding: 0 0 0 32px;
         }
         li {
           display: inline-block;
           padding: 0px 8px;
+        }
+        li:hover {
+          background-color: #6b48a8;
+          padding: 8px;
+          border-radius: 50%;
+        }
+        a:hover {
+          font-size: 16px;
         }
       }
     `;
@@ -90,14 +91,13 @@ class NavBar extends LitElement {
             My Travel App ✌
           </h1>
           <ul>
-            <li><a href="#">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="#">Tour</a></li>
-            <li><a href="#">Hotel</a></li>
-            <li><a href="#">Places</a></li>
+            <li><a href="addDestination.html">Add Destination</a></li>
+            <li><a href="places.html">Places</a></li>
             <li><a href="#">Contact Us</a></li>
-            <li>
-              <my-lion-button type="button"> Book now </my-lion-button>
-            </li>
+
+            <my-lion-button type="button"> Book Now </my-lion-button>
           </ul>
         </nav>
       </header>

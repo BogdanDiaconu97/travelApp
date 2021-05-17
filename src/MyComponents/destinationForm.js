@@ -16,8 +16,11 @@ import { ajax } from '@lion/ajax';
 class DestinationForm extends LitElement {
   static get styles() {
     return css`
-      lion-button {
-        padding: 50px;
+      my-lion-button {
+        background-color: #3bed5c;
+      }
+      my-lion-button:hover {
+        background-color: #6b48a8;
       }
     `;
   }
@@ -37,6 +40,7 @@ class DestinationForm extends LitElement {
   render() {
     return html`
       <my-lion-form>
+        <h3>Add Destination</h3>
         <form @submit=${this._handleFormSubmit}>
           <my-lion-input name="name" label="Location's name"></my-lion-input>
           <my-lion-input name="type" label="Location's type"></my-lion-input>
@@ -60,6 +64,8 @@ class DestinationForm extends LitElement {
     const formData = new FormData(form);
     this._locationData = Object.fromEntries(formData);
     this._postLocation(this._locationData);
+    form.reset();
+    alert('Location added!');
   }
 
   async _postLocation() {

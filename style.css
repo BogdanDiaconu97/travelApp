@@ -11,14 +11,14 @@ body {
 }
 body {
   background-color: hsl(0, 0%, 88%);
-  display: grid;
+  /* display: grid; */
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: minmax(100px, auto);
 }
-.header {
+/* .header {
   grid-column: 1/13;
   grid-row: 1/2;
-}
+} */
 nav {
   margin-bottom: 48px;
 }

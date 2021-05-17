@@ -33,6 +33,7 @@ export default merge(baseConfig, {
       targets: [
         { src: 'assets', dest: 'dist' },
         { src: './places.html', dest: 'dist' },
+        { src: './addDestination.html', dest: 'dist' },
       ],
     }),
   ],
