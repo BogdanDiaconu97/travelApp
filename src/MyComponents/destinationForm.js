@@ -40,7 +40,7 @@ class DestinationForm extends LitElement {
   render() {
     return html`
       <my-lion-form>
-        <h3>Add Destination</h3>
+        <h3>Add New Destination</h3>
         <form @submit=${this._handleFormSubmit}>
           <my-lion-input name="name" label="Location's name"></my-lion-input>
           <my-lion-input name="type" label="Location's type"></my-lion-input>

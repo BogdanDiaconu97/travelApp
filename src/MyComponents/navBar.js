@@ -5,8 +5,7 @@ class NavBar extends LitElement {
   static get styles() {
     return css`
       nav {
-        margin: 16px 0 32px 0;
-        border-bottom: 2px solid black;
+        padding: 16px 0 48px 0;
       }
       h1 {
         padding-top: 16px;
@@ -63,7 +62,9 @@ class NavBar extends LitElement {
 
   static get properties() {
     return {
-      _isRendering: Boolean,
+      _isRendering: {
+        type: Boolean,
+      },
     };
   }
 
