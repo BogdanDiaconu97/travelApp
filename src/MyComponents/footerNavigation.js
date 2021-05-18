@@ -11,6 +11,13 @@ class FooterNavigation extends LitElement {
         display: block;
         padding-top: 8px;
       }
+      a {
+        text-decoration: none;
+        color: lightgrey;
+      }
+      li:hover {
+        font-weight: bold;
+      }
       a:hover {
         color: #fff;
         cursor: pointer;
