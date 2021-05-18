@@ -11,8 +11,8 @@ import '../LionWebComponents/myLionButton.js';
 import '../LionWebComponents/myLionForm.js';
 import '../LionWebComponents/myLionInput.js';
 import { Pattern, MinMaxLength } from '@lion/form-core';
-
 import { ajax } from '@lion/ajax';
+import { IsRomania } from '../Validators/isRomania.js';
 
 class DestinationForm extends LitElement {
   static get styles() {
@@ -63,15 +63,7 @@ class DestinationForm extends LitElement {
           <my-lion-input
             name="type"
             label="Location's type"
-            .validators=${[
-              new MinMaxLength(
-                { min: 4, max: 18 },
-                {
-                  getMessage: () =>
-                    'Please enter a valid type. (4-18 characters)',
-                }
-              ),
-            ]}
+            .validator=${[new IsRomania()]}
           ></my-lion-input>
           <my-lion-input
             name="description"
@@ -105,9 +97,13 @@ class DestinationForm extends LitElement {
     const form = event.target;
     const formData = new FormData(form);
     this._locationData = Object.fromEntries(formData);
-    this._postLocation(this._locationData);
-    form.reset();
-    alert('Location added!');
+    const isFormValid = !form.parentElement.showsFeedbackFor.includes('error');
+    console.log({ isFormValid });
+    if (isFormValid) {
+      this._postLocation(this._locationData);
+      form.reset();
+      alert('Location added!');
+    }
   }
 
   async _postLocation() {
