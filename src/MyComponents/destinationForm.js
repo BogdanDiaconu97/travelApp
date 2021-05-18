@@ -23,6 +23,9 @@ class DestinationForm extends LitElement {
       my-lion-button:hover {
         background-color: #6b48a8;
       }
+      [type='error'] {
+        color: #ffd2d2;
+      }
     `;
   }
 
