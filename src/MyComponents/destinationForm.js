@@ -10,8 +10,8 @@ import { LitElement, css, html } from '@lion/core';
 import '../LionWebComponents/myLionButton.js';
 import '../LionWebComponents/myLionForm.js';
 import '../LionWebComponents/myLionInput.js';
-import { Pattern, MinMaxLength } from '@lion/form-core';
-
+import { Pattern, MinMaxLength, Required } from '@lion/form-core';
+import { loadDefaultFeedbackMessages } from '@lion/validate-messages';
 import { ajax } from '@lion/ajax';
 
 class DestinationForm extends LitElement {
@@ -42,6 +42,7 @@ class DestinationForm extends LitElement {
   }
 
   render() {
+    loadDefaultFeedbackMessages();
     return html`
       <my-lion-form>
         <h3>Add New Destination</h3>
@@ -51,6 +52,7 @@ class DestinationForm extends LitElement {
             label="Location's name"
             type="text"
             .validators=${[
+              new Required(),
               new MinMaxLength(
                 { min: 4, max: 20 },
                 {
@@ -64,6 +66,7 @@ class DestinationForm extends LitElement {
             name="type"
             label="Location's type"
             .validators=${[
+              new Required(),
               new MinMaxLength(
                 { min: 4, max: 18 },
                 {
@@ -77,6 +80,7 @@ class DestinationForm extends LitElement {
             name="description"
             label="Location's description"
             .validators=${[
+              new Required(),
               new MinMaxLength(
                 { min: 5, max: 50 },
                 {
@@ -89,6 +93,7 @@ class DestinationForm extends LitElement {
             name="imageUrl"
             label="Location's picture"
             .validators=${[
+              new Required(),
               new Pattern(RegExp('https?://'), {
                 getMessage: () => 'Please enter a valid URL',
               }),
@@ -105,9 +110,12 @@ class DestinationForm extends LitElement {
     const form = event.target;
     const formData = new FormData(form);
     this._locationData = Object.fromEntries(formData);
-    this._postLocation(this._locationData);
-    form.reset();
-    alert('Location added!');
+    const isFormValid = !form.parentElement.showsFeedbackFor.includes('error');
+    if (isFormValid) {
+      this._postLocation(this._locationData);
+      form.reset();
+      alert('Location added!');
+    }
   }
 
   async _postLocation() {
