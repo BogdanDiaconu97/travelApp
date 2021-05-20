@@ -92,10 +92,10 @@ class NavBar extends LitElement {
             My Travel App ✌
           </h1>
           <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="#">Tour</a></li>
-            <li><a href="addDestination.html">Add Destination</a></li>
-            <li><a href="places.html">Places</a></li>
+            <li><a href="/add-destination">Add Destination</a></li>
+            <li><a href="/places">Places</a></li>
             <li><a href="#">Contact Us</a></li>
 
             <my-lion-button type="button"> Book Now </my-lion-button>
