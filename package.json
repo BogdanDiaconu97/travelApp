@@ -37,6 +37,7 @@
     "@lion/form": "^0.11.1",
     "@lion/form-core": "^0.13.0",
     "@lion/input": "^0.14.1",
+    "@lion/input-datepicker": "^0.22.1",
     "@lion/validate-messages": "^0.6.1",
     "@vaadin/router": "^1.7.4",
     "lit-element": "^2.4.0",
