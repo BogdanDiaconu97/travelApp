@@ -32,8 +32,8 @@ export default merge(baseConfig, {
     copy({
       targets: [
         { src: 'assets', dest: 'dist' },
-        { src: './places.html', dest: 'dist' },
-        { src: './addDestination.html', dest: 'dist' },
+        { src: '_redirects', dest: 'dist' },
+        { src: 'style.css', dest: 'dist' },
       ],
     }),
   ],
