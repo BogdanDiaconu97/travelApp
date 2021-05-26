@@ -6,6 +6,11 @@ import '../MyComponents/heroContent.js';
 import { LitElement, html } from 'lit-element';
 
 export class IndexView extends LitElement {
+  connectedCallback() {
+    super.connectedCallback();
+    window.document.title = 'Travel App';
+  }
+
   render() {
     return html`
       <nav-bar></nav-bar>
