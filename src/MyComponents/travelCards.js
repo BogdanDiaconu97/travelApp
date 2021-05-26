@@ -78,7 +78,7 @@ class TravelCard extends LitElement {
   }
 
   _handleClickRedirect(event) {
-    this.windowObject.location.href = `http://localhost:8000/places/${event.target.id}`;
+    this.windowObject.location.href = `places/${event.target.id}`;
   }
 
   render() {
