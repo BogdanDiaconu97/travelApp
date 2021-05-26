@@ -6,6 +6,11 @@ import '../MyComponents/travelCards.js';
 import { LitElement, html } from 'lit-element';
 
 export class AddDestinationView extends LitElement {
+  connectedCallback() {
+    super.connectedCallback();
+    window.document.title = 'Add Destination';
+  }
+
   render() {
     return html`
       <nav-bar></nav-bar>

@@ -7,6 +7,12 @@ class TravelCard extends LitElement {
       :host {
         grid-column: 1/13;
       }
+      button {
+        padding: 16px;
+      }
+      button:hover {
+        cursor: pointer;
+      }
       h1 {
         font-family: chankboard;
       }
@@ -45,11 +51,18 @@ class TravelCard extends LitElement {
       load: {
         type: Boolean,
       },
+      _idsList: {
+        type: Array,
+      },
+      windowObject: {
+        type: Object,
+      },
     };
   }
 
   connectedCallback() {
     super.connectedCallback();
+    this.windowObject = window;
     if (!this._cardList) {
       this.loading();
     }
@@ -60,14 +73,12 @@ class TravelCard extends LitElement {
     const response = await fetch(myUrl);
     const data = await response.json();
     this._cardList = Object.values(data);
+    this._idsList = Object.keys(data);
     this.load = false;
-    // if (!response.ok) {
-    //   console.log('error with API');
-    // }
+  }
 
-    // fetch(myUrl)
-    //   .then(response => response.json())
-    //   .then(data => (this._cardList = Object.values(data)));
+  _handleClickRedirect(event) {
+    this.windowObject.location.href = `http://localhost:8000/places/${event.target.id}`;
   }
 
   render() {
@@ -76,10 +87,17 @@ class TravelCard extends LitElement {
       : html`<h1 class="bookNow">Book Now!</h1>
           <ul>
             ${this._cardList.map(
-              location =>
+              (location, index) =>
                 html`
                   <li>
                     <card-list-item .cardItem=${location}></card-list-item>
+                    <button
+                      type="button"
+                      id=${this._idsList[index]}
+                      @click=${this._handleClickRedirect}
+                    >
+                      Show More!
+                    </button>
                   </li>
                 `
             )}
