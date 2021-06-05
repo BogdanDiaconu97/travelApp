@@ -1,5 +1,5 @@
 import { LitElement, html, css } from 'lit-element';
-import './travelCard.js';
+import './TravelCard.js';
 
 class TravelCard extends LitElement {
   static get styles() {

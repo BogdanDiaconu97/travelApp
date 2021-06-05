@@ -1,8 +1,8 @@
-import '../MyComponents/navBar.js';
-import '../MyComponents/footer.js';
-import '../MyComponents/destinationForm.js';
-import '../MyComponents/travelCards.js';
-import '../MyComponents/heroContent.js';
+import '../MyComponents/NavBar.js';
+import '../MyComponents/Footer.js';
+import '../MyComponents/DestinationForm.js';
+import '../MyComponents/TravelCards.js';
+import '../MyComponents/HeroContent.js';
 import { LitElement, html } from 'lit-element';
 
 export class IndexView extends LitElement {

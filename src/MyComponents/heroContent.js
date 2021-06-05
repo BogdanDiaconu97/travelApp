@@ -1,8 +1,8 @@
 import { LitElement, html, css } from '@lion/core';
-import '../LionWebComponents/myLionForm.js';
-import '../LionWebComponents/myLionButton.js';
-import '../LionWebComponents/myLionDatePicker.js';
-import './heroContentForm.js';
+import '../LionWebComponents/MyLionForm.js';
+import '../LionWebComponents/MyLionButton.js';
+import '../LionWebComponents/MyLionDatePicker.js';
+import './HeroContentForm.js';
 
 class HeroContent extends LitElement {
   static get styles() {

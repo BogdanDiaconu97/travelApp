@@ -1,6 +1,6 @@
-import '../MyComponents/navBar.js';
-import '../MyComponents/footer.js';
-import '../MyComponents/travelCard.js';
+import '../MyComponents/NavBar.js';
+import '../MyComponents/Footer.js';
+import '../MyComponents/TravelCard.js';
 
 import { LitElement, html } from 'lit-element';
 

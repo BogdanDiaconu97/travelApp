@@ -1,8 +1,8 @@
 import { html, css, LitElement } from '@lion/core';
-import '../LionWebComponents/myLionButton.js';
-import '../LionWebComponents/myLionInput.js';
-import '../LionWebComponents/myLionForm.js';
-import './footerNavigation.js';
+import '../LionWebComponents/MyLionButton.js';
+import '../LionWebComponents/MyLionInput.js';
+import '../LionWebComponents/MyLionForm.js';
+import './FooterNavigation.js';
 
 class FooterComponent extends LitElement {
   static get styles() {
@@ -68,11 +68,6 @@ class FooterComponent extends LitElement {
     `;
   }
 
-  //   static get properties() {
-  //     return {
-  //       _subscribeEmail: String,
-  //     };
-  //   }
   connectedCallback() {
     super.connectedCallback();
   }

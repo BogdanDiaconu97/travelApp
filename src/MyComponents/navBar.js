@@ -1,5 +1,5 @@
 import { LitElement, html, css } from 'lit-element';
-import '../LionWebComponents/myLionButton.js';
+import '../LionWebComponents/MyLionButton.js';
 
 class NavBar extends LitElement {
   static get styles() {

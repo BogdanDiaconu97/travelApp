@@ -1,15 +1,7 @@
 import { LitElement, css, html } from '@lion/core';
-
-// import { LionInput } from '@lion/input';
-// import { LionForm } from '@lion/form';
-// import { LionButton } from '@lion/button';
-
-// import '@lion/input/define';
-// import '@lion/form/define';
-// import '@lion/button/define';
-import '../LionWebComponents/myLionButton.js';
-import '../LionWebComponents/myLionForm.js';
-import '../LionWebComponents/myLionInput.js';
+import '../LionWebComponents/MyLionButton.js';
+import '../LionWebComponents/MyLionForm.js';
+import '../LionWebComponents/MyLionInput.js';
 import { Pattern, MinMaxLength, Required } from '@lion/form-core';
 import { loadDefaultFeedbackMessages } from '@lion/validate-messages';
 import { ajax } from '@lion/ajax';

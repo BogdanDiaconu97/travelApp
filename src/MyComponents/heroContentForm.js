@@ -1,7 +1,7 @@
 import { LitElement, html, css } from '@lion/core';
-import '../LionWebComponents/myLionForm.js';
-import '../LionWebComponents/myLionButton.js';
-import '../LionWebComponents/myLionDatePicker.js';
+import '../LionWebComponents/MyLionForm.js';
+import '../LionWebComponents/MyLionButton.js';
+import '../LionWebComponents/MyLionDatePicker.js';
 import { MinDate } from '@lion/form-core';
 
 class HeroContentForm extends LitElement {
