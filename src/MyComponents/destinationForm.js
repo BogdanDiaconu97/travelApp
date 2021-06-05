@@ -94,7 +94,7 @@ class DestinationForm extends LitElement {
             label="Location's picture"
             .validators=${[
               new Required(),
-              new Pattern(RegExp('https?://'), {
+              new Pattern(RegExp('^(https?|ftp)://'), {
                 getMessage: () => 'Please enter a valid URL',
               }),
             ]}
