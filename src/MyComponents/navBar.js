@@ -4,6 +4,9 @@ import '../LionWebComponents/myLionButton.js';
 class NavBar extends LitElement {
   static get styles() {
     return css`
+      .toggle {
+        display: none;
+      }
       nav {
         padding: 16px 0 48px 0;
       }
@@ -21,7 +24,7 @@ class NavBar extends LitElement {
         color: #3a954a;
       }
       ul {
-        display: none;
+        display: block;
         padding: 0px;
       }
       li {
@@ -33,6 +36,9 @@ class NavBar extends LitElement {
         font-weight: bolder;
       }
       @media only screen and (min-width: 768px) {
+        .toggle {
+          display: block;
+        }
         nav {
           display: flex;
           justify-content: space-between;
@@ -60,27 +66,16 @@ class NavBar extends LitElement {
     `;
   }
 
-  static get properties() {
-    return {
-      _isRendering: {
-        type: Boolean,
-      },
-    };
-  }
-
   connectedCallback() {
     super.connectedCallback();
   }
 
   _handleClick(event) {
     const ul = event.target.nextElementSibling;
-    console.log();
-    if (this._isRendering) {
-      ul.style.display = 'none';
-      this._isRendering = false;
+    if (ul.classList.contains('toggle')) {
+      ul.classList.remove('toggle');
     } else {
-      ul.style.display = 'block';
-      this._isRendering = true;
+      ul.classList.add('toggle');
     }
   }
 
@@ -88,10 +83,14 @@ class NavBar extends LitElement {
     return html`
       <header>
         <nav>
-          <h1 @click=${this._handleClick} @keypress=${this._handleClick}>
+          <h1
+            @click=${this._handleClick}
+            @keypress=${this._handleClick}
+            tabindex="0"
+          >
             My Travel App ✌
           </h1>
-          <ul>
+          <ul class="toggle">
             <li><a href="/">Home</a></li>
             <li><a href="#">Tour</a></li>
             <li><a href="/add-destination">Add Destination</a></li>
