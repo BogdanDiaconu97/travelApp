@@ -25,11 +25,23 @@ class HeroContentForm extends LitElement {
     `;
   }
 
+  static get properties() {
+    return {
+      checkIn: Date,
+      checkOut: Date,
+    };
+  }
+
   constructor() {
     super();
-    this._today = new Date();
-    this._tomorrow = new Date();
-    this._tomorrow.setDate(this._tomorrow.getDate() + 1);
+    this.checkIn = new Date();
+    this.checkOut = new Date();
+    this.checkOut.setDate(this.checkIn.getDate() + 1);
+  }
+
+  _handleInput(event) {
+    this.checkIn.setDate(event.target.modelValue.getDate());
+    this.checkOut.setDate(this.checkIn.getDate() + 1);
   }
 
   render() {
@@ -39,6 +51,7 @@ class HeroContentForm extends LitElement {
           <form>
             <my-lion-input name="destination" label="Destination" type="text">
             </my-lion-input>
+
             <my-lion-input
               name="members"
               label="Members"
@@ -47,12 +60,14 @@ class HeroContentForm extends LitElement {
             <my-lion-date-picker
               name="checkIn"
               label="Check-In Date"
-              .validators=${[new MinDate(this._today)]}
+              .validators=${[new MinDate(new Date())]}
+              .modelValue=${this.checkIn}
+              @model-value-changed=${this._handleInput}
             ></my-lion-date-picker>
             <my-lion-date-picker
               name="checkOut"
               label="Check-Out Date"
-              .validators=${[new MinDate(this._tomorrow)]}
+              .validators=${[new MinDate(this.checkOut)]}
             ></my-lion-date-picker>
             <my-lion-button type="submit">Book Now</my-lion-button>
           </form>
