@@ -10,15 +10,23 @@ In this project I tried to simulate a travel application. It is based on Lit Ele
 
 ### Key Points
 
-Routes based on Vaadin Router.
-4 different views, 3 statics (index, add-destination, places-view) and 1 dynamic based on an id (places-id-view).
-Style applied on lion web components.
-Components with minimal responsability for reusability and simplicity.
-API calls in web components.
-Choosen colors from Adobe Colors.
-High accesibility (tab index, labels, keypress)
-Input validators (min characters, http/https for links).
-Responsive design (media queries).
+##### Routes based on Vaadin Router.
+
+##### 4 different views, 3 statics (index, add-destination, places-view) and 1 dynamic based on an id (places-id-view).
+
+##### Style applied on lion web components.
+
+##### Components with minimal responsability for reusability and simplicity.
+
+##### API calls in web components.
+
+##### Choosen colors from Adobe Colors.
+
+##### High accesibility (tab index, labels, keypress)
+
+##### Input validators (min characters, http/https for links).
+
+##### Responsive design (media queries).
 
 ## Interactions with the API
 
