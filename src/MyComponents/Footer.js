@@ -11,7 +11,15 @@ class FooterComponent extends LitElement {
         background-color: #a16520;
         padding-top: 24px;
       }
+      input {
+        border-radius: 1em;
+        padding: 6px;
+      }
+      input:focus {
+        outline: none;
+      }
       h3 {
+        font-family: 'Merriweather', serif;
         font-weight: bold;
         font-size: 32px;
       }
@@ -93,8 +101,8 @@ class FooterComponent extends LitElement {
         </section>
         <ul>
           <li>
-            <a href="https://unsplash.com/photos/M6XC789HLe8">
-              Image by Aniket Deole
+            <a href="https://unsplash.com/photos/rhlV7hF-sVY">
+              Image by Oliver Sjöström
             </a>
           </li>
           <li>

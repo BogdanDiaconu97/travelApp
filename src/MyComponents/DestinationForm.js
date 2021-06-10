@@ -9,6 +9,16 @@ import { ajax } from '@lion/ajax';
 class DestinationForm extends LitElement {
   static get styles() {
     return css`
+      h3 {
+        font-family: 'Merriweather', serif;
+      }
+      input {
+        border-radius: 1em;
+        padding: 6px;
+      }
+      input:focus {
+        outline: none;
+      }
       my-lion-button {
         background-color: #3bed5c;
       }

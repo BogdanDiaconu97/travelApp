@@ -7,6 +7,13 @@ import { MinDate } from '@lion/form-core';
 class HeroContentForm extends LitElement {
   static get styles() {
     return css`
+      input {
+        border-radius: 1em;
+        padding: 6px;
+      }
+      input:focus {
+        outline: none;
+      }
       @media only screen and(min-width:1200px) {
         my-lion-form {
           display: flex;

@@ -8,8 +8,8 @@ class MyLionDatePicker extends LionInputDatepicker {
       css`
         :host {
           min-width: 150px;
-          max-width: 200px;
           margin: 0 auto;
+          width: 75%;
           padding: 16px 0;
           font-weight: bold;
         }
@@ -23,7 +23,7 @@ class MyLionDatePicker extends LionInputDatepicker {
         }
         @media only screen and (min-width: 768px) {
           :host {
-            max-width: 200px;
+            max-width: 600px;
           }
         }
         @media only screen and (min-width: 1024px) {

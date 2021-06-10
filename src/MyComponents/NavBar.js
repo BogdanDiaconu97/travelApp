@@ -11,6 +11,7 @@ class NavBar extends LitElement {
         padding: 16px 0 48px 0;
       }
       h1 {
+        font-family: 'Merriweather', serif;
         padding-top: 16px;
       }
       a {
@@ -34,6 +35,7 @@ class NavBar extends LitElement {
       a:hover {
         color: #3a954a;
         font-weight: bolder;
+        font-family: 'Merriweather', serif;
       }
       @media only screen and (min-width: 768px) {
         .toggle {

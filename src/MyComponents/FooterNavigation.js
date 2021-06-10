@@ -69,10 +69,10 @@ class FooterNavigation extends LitElement {
       <nav>
         <p>&copy; 2021 ING DevSchool</p>
         <ul>
-          <li><a href="index.html">Home</a></li>
+          <li><a href="/">Home</a></li>
           <li><a href="#">Tour</a></li>
-          <li><a href="#">Hotel</a></li>
-          <li><a href="places.html">Places</a></li>
+          <li><a href="/add-destination">Add Destination</a></li>
+          <li><a href="/places">Places</a></li>
           <li><a href="#">Contact Us</a></li>
         </ul>
       </nav>

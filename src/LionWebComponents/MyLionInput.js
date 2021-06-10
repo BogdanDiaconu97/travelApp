@@ -8,22 +8,18 @@ class MyLionInput extends LionInput {
       css`
         :host {
           min-width: 150px;
-          max-width: 200px;
           margin: 0 auto;
+          width: 75%;
+
           padding: 16px 0;
           font-weight: bold;
         }
         :host(:focus) {
           border: 2px solid #6b48a8;
         }
-        @media only screen and (min-width: 480px) {
-          :host {
-            width: 75%;
-          }
-        }
         @media only screen and (min-width: 768px) {
           :host {
-            max-width: 200px;
+            max-width: 600px;
           }
         }
         @media only screen and (min-width: 1024px) {

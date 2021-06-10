@@ -14,7 +14,7 @@ class TravelCard extends LitElement {
         cursor: pointer;
       }
       h1 {
-        font-family: chankboard;
+        font-family: 'Merriweather', serif;
       }
       .bookNow {
         padding: 100px 0;

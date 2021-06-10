@@ -13,14 +13,26 @@ class HeroContent extends LitElement {
       my-lion-button:hover {
         background-color: #6b48a8;
       }
+      h3 {
+        font-family: 'Merriweather', serif;
+        font-size: 42px;
+        color: #303030;
+        padding-bottom: 70px;
+      }
       .photo {
         background-color: #fff;
         padding: 100px 0 300px 0;
+        background-image: url('https://images.unsplash.com/photo-1525849306000-cc26ceb5c1d7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
       }
       .contentDescription {
         margin: 36px 0 56px 0;
       }
       .textSection h2 {
+        font-family: 'Merriweather', serif;
         font-size: 36px;
         font-weight: bold;
         margin: 56px 0;
@@ -37,6 +49,9 @@ class HeroContent extends LitElement {
         background-position: center;
       }
       @media only screen and (min-width: 768px) {
+        h3 {
+          color: #303030;
+        }
         .contentDescription {
           display: flex;
         }
@@ -49,6 +64,9 @@ class HeroContent extends LitElement {
         .textSection {
           flex: 1;
           padding-right: 36px;
+        }
+        .photo {
+          background-image: url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80');
         }
       }
     `;
