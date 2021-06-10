@@ -13,6 +13,10 @@ class HeroContent extends LitElement {
       my-lion-button:hover {
         background-color: #6b48a8;
       }
+      .photo {
+        background-color: #fff;
+        padding: 100px 0 300px 0;
+      }
       .contentDescription {
         margin: 36px 0 56px 0;
       }
@@ -52,8 +56,10 @@ class HeroContent extends LitElement {
 
   render() {
     return html`
-      <h3>Discover The World <br />With Us</h3>
-      <my-lion-button type="button">Start Tour</my-lion-button>
+      <div class="photo">
+        <h3>Discover The World <br />With Us</h3>
+        <my-lion-button type="button">Start Tour</my-lion-button>
+      </div>
       <hero-content-form></hero-content-form>
       <article class="contentDescription">
         <section class="photoSection"><div></div></section>
