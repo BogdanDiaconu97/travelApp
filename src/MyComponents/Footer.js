@@ -106,11 +106,8 @@ class FooterComponent extends LitElement {
             </a>
           </li>
           <li>
-            <a href="#"> Image by Tim Swaan </a>
-          </li>
-          <li>
-            <a href="https://unsplash.com/photos/cssvEZacHvQ">
-              Image by Blake Verdoorn
+            <a href="https://unsplash.com/photos/O453M2Liufs">
+              Image by Luca Bravo
             </a>
           </li>
         </ul>

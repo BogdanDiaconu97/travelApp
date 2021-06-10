@@ -31,6 +31,7 @@ export class PlacesIdView extends LitElement {
     const response = await fetch(myUrl);
     const data = await response.json();
     this._locationDetails = data;
+    console.log(this._locationDetails);
     window.document.title = this._locationDetails.name;
     this._isLoading = false;
   }

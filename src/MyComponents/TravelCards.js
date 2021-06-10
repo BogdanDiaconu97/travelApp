@@ -1,5 +1,6 @@
 import { LitElement, html, css } from 'lit-element';
 import './TravelCard.js';
+import '../LionWebComponents/MyLionButton.js';
 
 class TravelCard extends LitElement {
   static get styles() {
@@ -7,11 +8,8 @@ class TravelCard extends LitElement {
       :host {
         grid-column: 1/13;
       }
-      button {
-        padding: 16px;
-      }
-      button:hover {
-        cursor: pointer;
+      my-lion-button {
+        margin-bottom: 24px;
       }
       h1 {
         font-family: 'Merriweather', serif;
@@ -20,9 +18,9 @@ class TravelCard extends LitElement {
         padding: 100px 0;
       }
       ul {
-        /* display: grid; */
         list-style: none;
         grid-template-columns: 1fr 1fr;
+        grid-auto-rows: minmax(100px, auto);
         grid-gap: 16px;
         padding-left: 20px;
         margin-right: 20px;
@@ -91,13 +89,13 @@ class TravelCard extends LitElement {
                 html`
                   <li>
                     <card-list-item .cardItem=${location}></card-list-item>
-                    <button
+                    <my-lion-button
                       type="button"
                       id=${this._idsList[index]}
                       @click=${this._handleClickRedirect}
                     >
                       Show More!
-                    </button>
+                    </my-lion-button>
                   </li>
                 `
             )}

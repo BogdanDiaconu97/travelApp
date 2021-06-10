@@ -4,27 +4,28 @@ class CardListItem extends LitElement {
   static get styles() {
     return css`
       .container {
-        background-color: lightgrey;
+        background-color: #ed8f24;
       }
       img {
         width: 100%;
-        max-width: 600px;
+        /* max-width: 600px; */
         height: 250px;
         cursor: pointer;
       }
       .text {
-        font-family: chankboard;
         text-align: left;
         padding-left: 36px;
       }
       h1 {
         padding: 8px 0 0 36px;
         margin-bottom: 24px;
-        font-size: 16px;
+        font-size: 32px;
+        font-family: 'Merriweather', serif;
       }
       h3 {
         font-weight: bold;
         padding: 8px 0 0 12px;
+        font-family: 'Rubik', sans-serif;
       }
       h3::before {
         content: 'type: ';
@@ -47,14 +48,11 @@ class CardListItem extends LitElement {
       @media only screen and (min-width: 768px) {
         img {
           width: 100%;
-          max-width: 1024px;
-          height: 300px;
+          /* max-width: 1024px; */
+          height: 100%;
         }
       }
       @media only screen and (min-width: 1200px) {
-        img {
-          height: 400px;
-        }
       }
     `;
   }
