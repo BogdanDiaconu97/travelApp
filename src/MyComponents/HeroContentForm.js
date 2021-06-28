@@ -47,8 +47,49 @@ class HeroContentForm extends LitElement {
   }
 
   _handleInput(event) {
-    this.checkIn.setDate(event.target.modelValue.getDate());
-    this.checkOut.setDate(this.checkIn.getDate() + 1);
+    this.checkIn.setFullYear(
+      event.target.modelValue.getFullYear(),
+      event.target.modelValue.getMonth(),
+      event.target.modelValue.getDate()
+    );
+    this.checkOut.setFullYear(
+      this.checkIn.getFullYear(),
+      this.checkIn.getMonth(),
+      this.checkIn.getDate() + 1
+    );
+    const daysForMonths = [30, null, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    let isLeapYear = false;
+    if (this.checkIn.getFullYear() % 4 === 0) {
+      isLeapYear = true;
+    } else {
+      isLeapYear = false;
+    }
+    if (this.checkIn.getMonth() === 1) {
+      if (isLeapYear) {
+        if (this.checkIn.getDate() === 29) {
+          this.checkOut.setDate(1);
+          this.checkOut.setMonth(this.checkIn.getMonth() + 1);
+        }
+      } else if (this.checkIn.getDate() === 28) {
+        this.checkOut.setDate(1);
+        this.checkOut.setMonth(this.checkIn.getMonth() + 1);
+      }
+    } else if (this.checkIn.getDate() === 30) {
+      if (daysForMonths[this.checkIn.getMonth()] === 30) {
+        this.checkOut.setDate(1);
+        this.checkOut.setMonth(this.checkIn.getMonth() + 1);
+      }
+    } else if (this.checkIn.getDate() === 31) {
+      this.checkOut.setDate(1);
+      this.checkOut.setMonth(this.checkIn.getMonth() + 1);
+    }
+    const options = {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+    };
+    const secondDatePicker = this.shadowRoot.getElementById('date');
+    secondDatePicker.value = this.checkOut.toLocaleDateString('en', options);
   }
 
   render() {
@@ -73,6 +114,7 @@ class HeroContentForm extends LitElement {
             ></my-lion-date-picker>
             <my-lion-date-picker
               name="checkOut"
+              id="date"
               label="Check-Out Date"
               .validators=${[new MinDate(this.checkOut)]}
             ></my-lion-date-picker>
