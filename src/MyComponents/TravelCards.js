@@ -24,6 +24,7 @@ class TravelCard extends LitElement {
         grid-gap: 16px;
         padding-left: 20px;
         margin-right: 20px;
+        align-items: flex-start;
       }
       @media only screen and (min-width: 768px) {
         ul {
@@ -88,14 +89,13 @@ class TravelCard extends LitElement {
               (location, index) =>
                 html`
                   <li>
-                    <card-list-item .cardItem=${location}></card-list-item>
-                    <my-lion-button
-                      type="button"
+                    <card-list-item
+                      .cardItem=${location}
                       id=${this._idsList[index]}
                       @click=${this._handleClickRedirect}
-                    >
-                      Show More!
-                    </my-lion-button>
+                      @keypress=${this._handleClickRedirect}
+                      tabindex="0"
+                    ></card-list-item>
                   </li>
                 `
             )}

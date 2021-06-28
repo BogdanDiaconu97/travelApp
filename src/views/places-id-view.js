@@ -1,41 +1,11 @@
 import '../MyComponents/NavBar.js';
 import '../MyComponents/Footer.js';
 import '../MyComponents/TravelCard.js';
+import '../MyComponents/PlaceIdComponent.js';
 
 import { LitElement, html } from 'lit-element';
 
 export class PlacesIdView extends LitElement {
-  static get properties() {
-    return {
-      _locationDetails: {
-        type: Object,
-      },
-      _isLoading: {
-        type: Boolean,
-      },
-    };
-  }
-
-  connectedCallback() {
-    super.connectedCallback();
-    if (!this._locationDetails) {
-      this._loading();
-    }
-  }
-
-  async _loading() {
-    this._isLoading = true;
-    const index = window.location.href.indexOf('places/');
-    const myId = window.location.href.substr(index);
-    const myUrl = `https://devschool-2020.firebaseio.com/bogdan/${myId}.json`;
-    const response = await fetch(myUrl);
-    const data = await response.json();
-    this._locationDetails = data;
-    console.log(this._locationDetails);
-    window.document.title = this._locationDetails.name;
-    this._isLoading = false;
-  }
-
   render() {
     return html`
       ${this._isLoading
@@ -46,7 +16,7 @@ export class PlacesIdView extends LitElement {
           `
         : html`
             <nav-bar></nav-bar>
-            <card-list-item .cardItem=${this._locationDetails}></card-list-item>
+            <place-id></place-id>
             <footer-component></footer-component>
           `}
     `;
