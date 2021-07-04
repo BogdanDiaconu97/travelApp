@@ -9,7 +9,7 @@ body {
   font-family: 'Ubuntu', sans-serif;
 }
 body {
-  background-color: #f5b964;
+  background-color: #e0cf3d;
   /* display: grid; */
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: minmax(100px, auto);

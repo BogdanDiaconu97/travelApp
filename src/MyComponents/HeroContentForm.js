@@ -19,6 +19,7 @@ class HeroContentForm extends LitElement {
           display: flex;
           flex-direction: column;
           align-items: stretch;
+          
         }
         form {
           display: flex;

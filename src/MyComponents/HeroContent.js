@@ -7,12 +7,6 @@ import './HeroContentForm.js';
 class HeroContent extends LitElement {
   static get styles() {
     return css`
-      my-lion-button {
-        background-color: #3bed5c;
-      }
-      my-lion-button:hover {
-        background-color: #6b48a8;
-      }
       h3 {
         font-family: 'Merriweather', serif;
         font-size: 42px;

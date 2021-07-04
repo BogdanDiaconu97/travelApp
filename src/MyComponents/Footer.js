@@ -8,7 +8,7 @@ class FooterComponent extends LitElement {
   static get styles() {
     return css`
       footer {
-        background-color: #a16520;
+        background-color: #e07322;
         padding-top: 24px;
       }
       input {
@@ -24,18 +24,10 @@ class FooterComponent extends LitElement {
         font-size: 32px;
       }
       my-lion-form {
-        background-color: #ed8f24;
-      }
-      a {
-        text-decoration: none;
-        color: #3bed5c;
+        background-color: #e0ce84;
       }
       ul {
         padding-left: 16px;
-      }
-      a:hover {
-        font-size: 18px;
-        color: #fff;
       }
       li {
         display: block;
@@ -53,7 +45,7 @@ class FooterComponent extends LitElement {
       @media only screen and (min-width: 1024px) {
         section {
           display: flex;
-          border: 4px solid #ed8f24;
+          border: 4px solid #e0ce84;
           margin: 0 128px;
         }
         div {
@@ -61,7 +53,7 @@ class FooterComponent extends LitElement {
         }
         h3::after {
           content: ' ➡';
-          color: #ed8f24;
+          color: #e0ce84;
         }
         my-lion-form {
           flex: 1;
@@ -99,19 +91,6 @@ class FooterComponent extends LitElement {
             </form>
           </my-lion-form>
         </section>
-        <ul>
-          <li>
-            <a href="https://unsplash.com/photos/rhlV7hF-sVY">
-              Image by Oliver Sjöström
-            </a>
-          </li>
-          <li>
-            <a href="https://unsplash.com/photos/O453M2Liufs">
-              Image by Luca Bravo
-            </a>
-          </li>
-        </ul>
-
         <footer-navigation></footer-navigation>
       </footer>
     `;

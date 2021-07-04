@@ -10,12 +10,12 @@ class MyLionButton extends LionButton {
           border: 1px solid black;
           border-radius: 8px;
           font-weight: bold;
-          color: #6b48a8;
-          background-color: #3a954a;
+          color: #af75e0;
+          background-color: #5b1994;
         }
         :host(:hover) {
-          color: #3a954a;
-          background-color: #6b48a8;
+          color: #5b1994;
+          background-color: #af75e0;
           cursor: pointer;
         }
       `,

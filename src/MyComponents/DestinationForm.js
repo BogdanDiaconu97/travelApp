@@ -19,12 +19,6 @@ class DestinationForm extends LitElement {
       input:focus {
         outline: none;
       }
-      my-lion-button {
-        background-color: #3bed5c;
-      }
-      my-lion-button:hover {
-        background-color: #6b48a8;
-      }
       [type='error'] {
         color: #ffd2d2;
       }

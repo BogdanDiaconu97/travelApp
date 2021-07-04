@@ -30,8 +30,7 @@ class FooterNavigation extends LitElement {
         padding: 0;
       }
       nav {
-        padding-bottom: 16px;
-        border-top: 1px solid #fff;
+        padding: 16px 0;
       }
       @media only screen and (min-width: 768px) {
         nav {

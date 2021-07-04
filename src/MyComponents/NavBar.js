@@ -22,7 +22,7 @@ class NavBar extends LitElement {
       h1:hover {
         color: lightgrey;
         cursor: pointer;
-        color: #3a954a;
+        color: #373f94;
       }
       ul {
         display: block;
@@ -33,7 +33,7 @@ class NavBar extends LitElement {
         padding: 12px 0;
       }
       a:hover {
-        color: #3a954a;
+        color: #373f94;
         font-weight: bolder;
         font-family: 'Merriweather', serif;
       }
@@ -57,7 +57,7 @@ class NavBar extends LitElement {
           padding: 0px 8px;
         }
         li:hover {
-          background-color: #6b48a8;
+          background-color: #af75e0;
           padding: 8px;
           border-radius: 50%;
         }

@@ -7,7 +7,7 @@ class MyLionForm extends LionForm {
       super.styles,
       css`
         :host {
-          background-color: #3a954a;
+          background-color: #4856e0;
           padding: 24px 0;
           margin: 0 auto;
         }
